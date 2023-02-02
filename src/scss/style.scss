@@ -36,6 +36,9 @@
     height: 100%;
     padding: 15px;
     border: 1px solid $white;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
 
     .power-tools {
       padding: 8px;

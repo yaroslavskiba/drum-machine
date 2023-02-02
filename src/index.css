@@ -134,6 +134,9 @@ ul li {
   height: 100%;
   padding: 15px;
   border: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
 }
 .drum-machine-contaier .control-tools .power-tools {
   padding: 8px;
@@ -180,6 +183,18 @@ ul li {
 }
 .drum-machine-contaier .control-tools .power-tools input[type=checkbox]:checked + label:after {
   left: 26px;
+}
+.drum-machine-contaier .swipes-range {
+  width: 250px;
+  position: relative;
+}
+.drum-machine-contaier input[type=range] {
+  margin: 18px 0;
+  width: 100%;
+  background-color: #fff;
+}
+.drum-machine-contaier input[type=range]:focus {
+  outline: none;
 }
 
 /*# sourceMappingURL=index.css.map */
