@@ -1,9 +1,11 @@
+@import "./colors.scss";
+
 html,
 body {
-  color: #373d4a;
-  background-color: #8e938f;
   width: 100%;
   height: 100%;
+  color: $white;
+  background-color: $html-bg-color;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
@@ -60,4 +62,10 @@ ul li {
   list-style: none;
 }
 
-/*# sourceMappingURL=style.css.map */
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

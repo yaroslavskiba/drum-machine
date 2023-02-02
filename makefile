@@ -1,5 +1,5 @@
 compil:
-		sass src/styles/scss/style.scss src/styles/style.css
+		sass src/scss/style.scss src/index.css
 
 install:
 		npm install

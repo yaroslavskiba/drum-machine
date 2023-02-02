@@ -1,16 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import './index.css';
+import Button from './components/button';
+import { Provider, useDispatch, useSelector } from 'react-redux'
+
+function App() {
+  const buttons = ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'];
+  return (
+    <div className='drum-machine-contaier'>
+      <div className='button-group'>
+        {/* {buttons.map(name => <Button buttonName={name} key={name} />)}  */}
+      </div>
+      <div className='control-tools'>
+        <form>
+          <div className='power-tools'>
+            <label htmlFor='power' className='title-tools'>power</label>
+            <input type="checkbox" className='power' id='power' name='active-drum-machine' defaultChecked />
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render(<App />);
