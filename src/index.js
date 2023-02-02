@@ -9,15 +9,13 @@ function App() {
   return (
     <div className='drum-machine-contaier'>
       <div className='button-group'>
-        {/* {buttons.map(name => <Button buttonName={name} key={name} />)}  */}
+        {buttons.map(name => <Button buttonName={name} key={name} />)} 
       </div>
       <div className='control-tools'>
-        <form>
-          <div className='power-tools'>
-            <label htmlFor='power' className='title-tools'>power</label>
-            <input type="checkbox" className='power' id='power' name='active-drum-machine' defaultChecked />
-          </div>
-        </form>
+        <div className='power-tools'>
+          <input type="checkbox" className='power' id='power' name='active-drum-machine' defaultChecked />
+          <label htmlFor='power'>- Power</label>
+        </div>
       </div>
     </div>
   );

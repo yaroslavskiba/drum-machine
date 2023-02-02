@@ -16,6 +16,7 @@ textarea {
 }
 
 * {
+  border-radius: 5px;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -99,6 +100,77 @@ ul li {
 }
 .drum-button span:not(active) {
   transition: all 0.2s;
+}
+
+.drum-machine-contaier {
+  max-width: 600px;
+  max-height: 100%;
+  border: 1px solid #fff;
+  padding: 25px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.drum-machine-contaier .button-group {
+  border: 1px solid #fff;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.drum-machine-contaier .control-tools {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  border: 1px solid #fff;
+}
+.drum-machine-contaier .control-tools .power-tools {
+  padding: 8px;
+  border: 1px solid #fff;
+  width: 180px;
+}
+.drum-machine-contaier .control-tools .power-tools input[type=checkbox] {
+  position: relative;
+  z-index: -1;
+  opacity: 0;
+}
+.drum-machine-contaier .control-tools .power-tools input[type=checkbox] + label {
+  padding: 0 0 0 60px;
+  position: relative;
+  cursor: pointer;
+}
+.drum-machine-contaier .control-tools .power-tools input[type=checkbox] + label:before {
+  content: "";
+  border: 1px solid #fff;
+  box-shadow: 2px 2px 3px #212121;
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 50px;
+  height: 26px;
+  border-radius: 13px;
+  background: #fff;
+  transition: 0.2s;
+}
+.drum-machine-contaier .control-tools .power-tools input[type=checkbox] + label:after {
+  content: "";
+  outline: 1px solid #212121;
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 10px;
+  background: #fff;
+  transition: 0.2s;
+}
+.drum-machine-contaier .control-tools .power-tools input[type=checkbox]:checked + label:before {
+  background: #212121;
+}
+.drum-machine-contaier .control-tools .power-tools input[type=checkbox]:checked + label:after {
+  left: 26px;
 }
 
 /*# sourceMappingURL=index.css.map */
