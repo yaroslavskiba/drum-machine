@@ -69,7 +69,7 @@ ul li {
   height: 100%;
 }
 
-.drum-button {
+.drum-pad {
   padding: 0.1em 0.25em;
   width: 11em;
   height: 8.2em;
@@ -78,7 +78,7 @@ ul li {
   border-radius: 0.3em;
   font-size: 12px;
 }
-.drum-button span {
+.drum-pad span {
   position: relative;
   display: flex;
   justify-content: center;
@@ -93,12 +93,12 @@ ul li {
   border: 0.08em solid #fff;
   box-shadow: 0 0.4em 0.1em 0.019em #fff;
 }
-.drum-button span:active {
+.drum-pad span:active {
   transition: all 0.1s;
   transform: translate(0, 0.4em);
   box-shadow: 0 0 0 0 #fff;
 }
-.drum-button span:not(active) {
+.drum-pad span:not(active) {
   transition: all 0.2s;
 }
 
@@ -110,6 +110,15 @@ ul li {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+}
+.drum-machine-contaier .display {
+  background-color: #212121;
+  color: #fff;
+  margin-bottom: 15px;
+  border: 1px solid #fff;
+  width: 240px;
+  min-height: 60px;
+  height: 100%;
 }
 .drum-machine-contaier .button-group {
   border: 1px solid #fff;
