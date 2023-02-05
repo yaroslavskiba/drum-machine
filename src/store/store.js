@@ -4,13 +4,15 @@ import keySoundBank2Reducer from './reducers/key-sound-bank2-reducer';
 import powerReducer from './reducers/power-reducer';
 import toneReducer from './reducers/tone-reducer';
 import volumeReducer from './reducers/volume-reducer';
+import currentButtonReducer from './reducers/current-button-reducer';
 
 const combineStore = combineReducers({
   bank1: keySoundBank1Reducer,
   bank2: keySoundBank2Reducer,
   power: powerReducer,
   tone: toneReducer,
-  volume: volumeReducer
+  volume: volumeReducer,
+  current: currentButtonReducer,
 })
 
 const store = createStore(combineStore);

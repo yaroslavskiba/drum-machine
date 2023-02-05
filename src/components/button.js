@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react';
-// import { useSelector } from 'react-redux'
+// import { useDispatch } from 'react-redux'
 
 const Button = (props) => {
+  // const dispatch = useDispatch();
   const id = props.id;
   const link = props.link;
+  // const currentState = props.display;
 
   useEffect(() => {
     document.addEventListener("keydown", soundKeyClick);
@@ -17,6 +19,7 @@ const Button = (props) => {
   }
 
   function soundKeyClick(e) {
+    // dispatch({ type: 'CURRENT', current: currentState });
     const key = e.keyCode;
     if (key === id) {
       soundMouseClick(link)
