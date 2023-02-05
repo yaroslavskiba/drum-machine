@@ -8,30 +8,14 @@ import ControlTools from './components/control-tools';
 import { Provider, useDispatch, useSelector } from 'react-redux'
 
 function App() {
-  // const buttonsOne = useSelector((state) => state.bank1.sound)
-  // const buttonsTwo = useSelector((state) => state.bank2.sound)
-  // const tone = useSelector((state) => state.tone.tone)
-
-  // useEffect(() => {
-  //   document.addEventListener("keydown", soundKeyClick);
-  //   return;
-  // })
-
-  // function soundMouseClick() {
-  //   const audio = new Audio()
-  //   audio.src = 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
-  //   audio.play()
-  // }
-
-  // function soundKeyClick(e) {
-  //   const key = e.keyCode;
-  //   if (key === 81) {
-  //     soundMouseClick()
-  //   }
-  // }
+  const buttonsOne = useSelector((state) => state.bank1.sound)
+  const buttonsTwo = useSelector((state) => state.bank2.sound)
+  const tone = useSelector((state) => state.tone.tone)
+  
   return (
     <div id="drum-machine">
-      <Button />
+      {tone === 'normal' ? buttonsOne.map((item, index) => <Button key={index} id={item.id} link={item.link} name={item.name} />)
+                         : buttonsTwo.map((item, index) => <Button key={index} id={item.id} link={item.link} name={item.name} />)}
     </div>
   );
 }

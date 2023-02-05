@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 
-const Button = () => {
-  const buttonsOne = useSelector((state) => state.bank1.sound)
-  const buttonsTwo = useSelector((state) => state.bank2.sound)
-  const tone = useSelector((state) => state.tone.tone)
+const Button = (props) => {
+  const id = props.id;
+  const link = props.link;
 
   useEffect(() => {
     document.addEventListener("keydown", soundKeyClick);
@@ -17,7 +16,7 @@ const Button = () => {
     audio.play();
   }
 
-  function soundKeyClick(e, id, link) {
+  function soundKeyClick(e) {
     const key = e.keyCode;
     if (key === id) {
       soundMouseClick(link)
@@ -26,8 +25,7 @@ const Button = () => {
 
   return (
     <>
-      {tone === 'normal' ? buttonsOne.map((item, index) => <button key={index}>{item.id}</button>)
-        : buttonsTwo.map((item, index) => <button key={index}>{item.name}</button>)}
+      <button className='drum-pad' onKeyDown={(e) => soundKeyClick(e)}>{props.name}</button>
     </>
   );
 }
