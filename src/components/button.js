@@ -1,25 +1,26 @@
 import React, {useEffect} from 'react';
-// import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const Button = (props) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const id = props.id;
   const link = props.link;
-  // const currentState = props.display;
+  const currentState = props.display;
 
   useEffect(() => {
-    document.addEventListener("keydown", soundKeyClick);
-    return;
-  })
+    window.addEventListener("keydown", soundKeyClick);
+  }, []);
 
   function soundMouseClick(link) {
+    dispatch({ type: 'CURRENT', payload: currentState });
+
     const audio = new Audio();
     audio.src = link;
     audio.play();
   }
 
   function soundKeyClick(e) {
-    // dispatch({ type: 'CURRENT', current: currentState });
+    console.log(e)
     const key = e.keyCode;
     if (key === id) {
       soundMouseClick(link)

@@ -12,6 +12,11 @@ function App() {
   const buttonsTwo = useSelector((state) => state.bank2.sound)
   const tone = useSelector((state) => state.tone.tone)
   const display = useSelector((state) => state.current.current);
+
+  // useEffect(() => {
+  //   const root = document.querySelector('#drum-machine');
+  //   root.focus();
+  // })
   
   return (
     <>
@@ -19,7 +24,7 @@ function App() {
         {tone === 'normal' ? buttonsOne.map((item, index) => <Button key={index} id={item.id} link={item.link} name={item.name} display={item.display} />)
                           : buttonsTwo.map((item, index) => <Button key={index} id={item.id} link={item.link} name={item.name} display={item.display} />)}
       </div>
-      {/* <div className='display'>{display}</div> */}
+      <div className='display'>{display}</div>
     </>
   );
 }
