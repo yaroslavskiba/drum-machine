@@ -6,6 +6,7 @@ import Button from './components/button';
 import Display from './components/display';
 import ControlTools from './components/control-tools';
 import { Provider, useDispatch, useSelector } from 'react-redux'
+import Volume from './components/volume'
 
 function App() {
   const buttonsOne = useSelector((state) => state.bank1.sound)
@@ -13,11 +14,8 @@ function App() {
   const tone = useSelector((state) => state.tone.tone)
   const display = useSelector((state) => state.current.current);
 
-  // useEffect(() => {
-  //   const root = document.querySelector('#drum-machine');
-  //   root.focus();
-  // })
-  
+
+
   return (
     <>
       <div id="drum-machine">
@@ -25,6 +23,7 @@ function App() {
                           : buttonsTwo.map((item, index) => <Button key={index} id={item.id} link={item.link} name={item.name} display={item.display} />)}
       </div>
       <div className='display'>{display}</div>
+      <Volume />
     </>
   );
 }
