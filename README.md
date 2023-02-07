@@ -1,4 +1,7 @@
 # Build a Drum Machine
+
+[CodeSandBox](https://codesandbox.io/p/github/yaroslavskiba/drum-machine/master?file=%2FREADME.md)
+
 Objective: Build an app that is functionally similar to this: [ https://drum-machine.freecodecamp.rocks/ ].
 
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
