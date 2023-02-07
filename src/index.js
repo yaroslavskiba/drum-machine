@@ -1,11 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import store from './store/store';
 import Button from './components/button';
-import Display from './components/display';
 import ControlTools from './components/control-tools';
-import { Provider, useDispatch, useSelector } from 'react-redux'
+import { Provider, useSelector } from 'react-redux'
 import Volume from './components/volume'
 
 function App() {
@@ -14,16 +13,16 @@ function App() {
   const tone = useSelector((state) => state.tone.tone)
   const display = useSelector((state) => state.current.current);
 
-
-
   return (
     <>
-      <div id="drum-machine">
-        {tone === 'normal' ? buttonsOne.map((item, index) => <Button key={index} id={item.id} link={item.link} name={item.name} display={item.display} />)
-                          : buttonsTwo.map((item, index) => <Button key={index} id={item.id} link={item.link} name={item.name} display={item.display} />)}
-      </div>
       <div className='display'>{display}</div>
+      <div id="drum-machine">
+        {tone === 'normal' ?
+          (buttonsOne.map((item, index) => <Button key={index} id={item.id} link={item.link} name={item.name} display={item.display} />)) :
+          (buttonsTwo.map((item, index) => <Button key={index} id={item.id} link={item.link} name={item.name} display={item.display} />))}
+      </div>
       <Volume />
+      <ControlTools />
     </>
   );
 }

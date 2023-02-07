@@ -2,7 +2,7 @@ const VOLUME = 'VOLUME';
 
 const volumeState = {
   type: VOLUME,
-  volume: '1'
+  volume: '30'
 }
 
 export default volumeState;

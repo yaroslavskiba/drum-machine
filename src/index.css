@@ -1,3 +1,192 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: Roboto, sans-serif;
+  background-color: #000;
+}
 
+input,
+textarea {
+  outline: none;
+}
+
+* {
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:active,
+a:focus {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+}
+
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+button {
+  background-color: inherit;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.control-tools {
+  width: 250px;
+  height: 85px;
+  padding-top: 15px;
+  border: 1px solid #fff;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.control-tools div {
+  display: flex;
+  text-align: center;
+  width: 150px;
+  text-align: left;
+}
+.control-tools div input[type=checkbox] {
+  position: relative;
+  z-index: -1;
+  display: none;
+}
+.control-tools div input[type=checkbox] + label {
+  position: relative;
+  cursor: pointer;
+}
+.control-tools div input[type=checkbox] + label:before {
+  content: "";
+  position: absolute;
+  border-radius: 5px;
+  top: 2px;
+  width: 60px;
+  height: 20px;
+  border: 1px solid #fff;
+  transition: 0.2s;
+}
+.control-tools div input[type=checkbox] + label:after {
+  content: "";
+  position: absolute;
+  border-radius: 3px;
+  top: 4px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  transition: 0.2s;
+}
+.control-tools div input[type=checkbox]:checked + label:after {
+  left: 42px;
+  background-color: red;
+}
+.control-tools div input[type=checkbox]:checked + label::before {
+  border: 1px solid red;
+}
+.control-tools div p {
+  margin-right: 8px;
+}
+
+#drum-machine {
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #fff;
+  max-width: 250px;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+}
+#drum-machine .drum-pad {
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.display {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: underline;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  padding: 15px;
+  width: 250px;
+  border: 1px solid #fff;
+}
+
+.display-volume {
+  letter-spacing: 2px;
+  text-decoration: underline;
+  padding: 15px;
+  margin-top: 15px;
+  border: 1px solid #fff;
+  text-align: center;
+  font-weight: 700;
+  /* Mouse-over effects */
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+}
+.display-volume .volumeContainer {
+  width: 220px;
+  margin-bottom: 5px;
+}
+.display-volume .volume {
+  border-radius: 2px;
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 10px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+}
+.display-volume .volume::-webkit-slider-thumb {
+  appearance: none;
+  border-radius: 5px;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #fff; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
 
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,126 @@
+@import "./nul-list.scss";
+
+.control-tools {
+  width: 250px;
+  height: 85px;
+  padding-top: 15px;
+  border: 1px solid #fff;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div {
+    display: flex;
+    text-align: center;
+    width: 150px;
+    text-align: left;
+
+    input[type="checkbox"] {
+      position: relative;
+      z-index: -1;
+      display: none;
+    }
+    input[type="checkbox"] + label {
+      position: relative;
+      cursor: pointer;
+    }
+    input[type="checkbox"] + label:before {
+      content: "";
+      position: absolute;
+      border-radius: 5px;
+      top: 2px;
+      width: 60px;
+      height: 20px;
+      border: 1px solid #fff;
+      transition: 0.2s;
+    }
+    input[type="checkbox"] + label:after {
+      content: "";
+      position: absolute;
+      border-radius: 3px;
+      top: 4px;
+      left: 2px;
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      transition: 0.2s;
+    }
+    input[type="checkbox"]:checked + label:after {
+      left: 42px;
+      background-color: red;
+    }
+
+    input[type="checkbox"]:checked + label::before {
+      border: 1px solid red;
+    }
+    p {
+      margin-right: 8px;
+    }
+  }
+}
+
+#drum-machine {
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #fff;
+  max-width: 250px;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+
+  .drum-pad {
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+}
+.display {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: underline;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  padding: 15px;
+  width: 250px;
+  border: 1px solid #fff;
+}
+
+.display-volume {
+  letter-spacing: 2px;
+  text-decoration: underline;
+  padding: 15px;
+  margin-top: 15px;
+  border: 1px solid #fff;
+  text-align: center;
+  font-weight: 700;
+
+  .volumeContainer {
+    width: 220px;
+    margin-bottom: 5px;
+  }
+  .volume {
+    border-radius: 2px;
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 10px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+  }
+
+  /* Mouse-over effects */
+
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .volume::-webkit-slider-thumb {
+    appearance: none;
+    border-radius: 5px;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #fff; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+}
