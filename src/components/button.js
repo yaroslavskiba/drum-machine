@@ -1,5 +1,5 @@
-import React, {useEffect, useRef} from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useEffect, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Button = (props) => {
   const dispatch = useDispatch();
@@ -7,9 +7,9 @@ const Button = (props) => {
   const link = props.link;
   const currentState = props.display;
   const volumeState = useSelector((state) => state.volume.volume);
-  const power = useSelector((state) => state.power.power)
+  const power = useSelector((state) => state.power.power);
   const audioRef = useRef(null);
-  const tone = useSelector((state) => state.tone.tone)
+  const tone = useSelector((state) => state.tone.tone);
 
   useEffect(() => {
     if (power !== 'enabled') {
@@ -25,7 +25,7 @@ const Button = (props) => {
     if (key === id) {
       soundPlay();
     }
-  };
+  }
 
   function soundPlay() {
     dispatch({ type: 'CURRENT', payload: currentState });
@@ -36,10 +36,17 @@ const Button = (props) => {
 
   return (
     <>
-      {power === 'enabled' ? <button className='drum-pad' onClick={soundPlay}>{props.name}</button> :
-      <button className='drum-pad' onClick={soundPlay} disabled>{props.name}</button>}
+      {power === 'enabled' ? (
+        <button id='drum-pad' className='drum-pad' onClick={soundPlay}>
+          {props.name}
+        </button>
+      ) : (
+        <button id='drum-pad' className='drum-pad' onClick={soundPlay} disabled>
+          {props.name}
+        </button>
+      )}
     </>
   );
-}
+};
 
 export default Button;
